@@ -1,9 +1,6 @@
 # DrawAnimationLine
 CABasicAnimation + CAShapeLayer 实现动画画线。
 
-for (int i=0; i<[self.allPoints count]; i++)
-    {
-        self.curPoints = [self.allPoints objectAtIndex:i];
         //添加path的UIView
         ShapeView  *pathShapeView = [[ShapeView alloc] init];
         pathShapeView.backgroundColor = [UIColor clearColor];
@@ -25,10 +22,3 @@ for (int i=0; i<[self.allPoints count]; i++)
         animation.duration = [[timeArray objectAtIndex:i] floatValue];//kDuration;
         [pathShapeView.shapeLayer addAnimation:animation forKey:NSStringFromSelector(@selector(strokeEnd))];
         [self updatePathsWithPathShapeView:pathShapeView];
-        
-        if (i == [self.allPoints count]-1) {
-            _lindex = 0;
-            [[UIApplication sharedApplication] endIgnoringInteractionEvents];
-            return;
-        }
-    }
